@@ -1014,6 +1014,7 @@ select{-webkit-appearance:none;appearance:none;padding-right:42px;cursor:pointer
 .mv-slide.has-link{pointer-events:auto;position:relative;z-index:2}
 .mv-cover{all:unset;position:absolute;inset:0;border-radius:10px;cursor:pointer}
 .mv-slide.playing{background:#000}
+.mv-slide.tt-playing{aspect-ratio:9/16;width:auto;height:min(calc(100vh - 190px),720px);max-width:100%}
 .mv-slide iframe{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:10px}
 .mv-gowrap{display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:center}
 .mv-go.mv-back{background:rgba(255,255,255,.14)}
@@ -1219,7 +1220,7 @@ body.mv-open{overflow:hidden}
 </div>
 <script>
 (function(){
-  const L=[{"k": 0, "lab": "შესავალი", "cn": "中文", "ka": "ჩინური ენა: იეროგლიფები, ტონები, ფინინი", "n": 12}, {"k": 1, "lab": "გაკვეთილი 1", "cn": "你好！", "ka": "გამარჯობა!", "n": 25}, {"k": 2, "lab": "გაკვეთილი 2", "cn": "谢谢你！", "ka": "გმადლობ!", "n": 14}, {"k": 3, "lab": "გაკვეთილი 3", "cn": "你叫什么名字？", "ka": "რა გქვია?", "n": 23}, {"k": 4, "lab": "გაკვეთილი 4", "cn": "她是我的汉语老师", "ka": "ის ჩემი ჩინურის მასწავლებელია", "n": 27}, {"k": 5, "lab": "გაკვეთილი 5", "cn": "她女儿今年二十岁", "ka": "მისი ქალიშვილი წელს 20 წლისაა", "n": 28}, {"k": 6, "lab": "გაკვეთილი 6", "cn": "我会说汉语", "ka": "ჩინურად ლაპარაკი შემიძლია", "n": 19}, {"k": 7, "lab": "გაკვეთილი 7", "cn": "今天几号？", "ka": "დღეს რა რიცხვია?", "n": 17}, {"k": 8, "lab": "გაკვეთილი 8", "cn": "我想喝茶", "ka": "ჩაის დალევა მინდა", "n": 19}, {"k": 9, "lab": "გაკვეთილი 9", "cn": "你儿子在哪儿工作？", "ka": "სად მუშაობს შენი შვილი?", "n": 20}, {"k": 10, "lab": "გაკვეთილი 10", "cn": "我能坐这儿吗？", "ka": "შეიძლება აქ დავჯდე?", "n": 22}, {"k": 11, "lab": "გაკვეთილი 11", "cn": "现在几点？", "ka": "ახლა რომელი საათია?", "n": 15}, {"k": 12, "lab": "გაკვეთილი 12", "cn": "明天天气怎么样？", "ka": "ხვალ როგორი ამინდი იქნება?", "n": 14}, {"k": 13, "lab": "გაკვეთილი 13", "cn": "他在学做中国菜呢", "ka": "ის ჩინური კერძების მომზადებას სწავლობს", "n": 23}, {"k": 14, "lab": "გაკვეთილი 14", "cn": "她买了不少衣服", "ka": "მან ბევრი ტანსაცმელი იყიდა", "n": 32}, {"k": 15, "lab": "გაკვეთილი 15", "cn": "我是坐飞机来的", "ka": "თვითმფრინავით ჩამოვედი", "n": 20}], IMG='hsk1', LINKS={"2-13": "https://www.youtube.com/watch?v=0Rb528mMWJM", "3-3": "https://www.youtube.com/watch?v=24uv7bNr54w", "3-4": "https://youtu.be/hWks3EBPWHQ", "3-6": "https://www.youtube.com/watch?v=aNtk8jHTHu4", "3-8": "https://youtu.be/kf7anmSu-ec", "4-4": "https://youtu.be/3g8oWYLBUio", "5-3": "https://www.youtube.com/watch?v=2eLP3FuuEVs", "5-4": "https://www.tiktok.com/@marie.arch/video/7395660495853784328", "5-7": "https://youtu.be/6r25dMrVj-M", "5-8": "https://youtu.be/O5ldMPut7eQ", "8-3": "https://youtu.be/PIkvN5B1y98", "9-3": "https://youtu.be/Cj9nle3-Zdw", "10-3": "https://youtu.be/bjoOH4-sSUU", "11-3": "https://youtu.be/s5xDqh8wMyU"};
+  const L=[{"k": 0, "lab": "შესავალი", "cn": "中文", "ka": "ჩინური ენა: იეროგლიფები, ტონები, ფინინი", "n": 12}, {"k": 1, "lab": "გაკვეთილი 1", "cn": "你好！", "ka": "გამარჯობა!", "n": 25}, {"k": 2, "lab": "გაკვეთილი 2", "cn": "谢谢你！", "ka": "გმადლობ!", "n": 14}, {"k": 3, "lab": "გაკვეთილი 3", "cn": "你叫什么名字？", "ka": "რა გქვია?", "n": 23}, {"k": 4, "lab": "გაკვეთილი 4", "cn": "她是我的汉语老师", "ka": "ის ჩემი ჩინურის მასწავლებელია", "n": 27}, {"k": 5, "lab": "გაკვეთილი 5", "cn": "她女儿今年二十岁", "ka": "მისი ქალიშვილი წელს 20 წლისაა", "n": 28}, {"k": 6, "lab": "გაკვეთილი 6", "cn": "我会说汉语", "ka": "ჩინურად ლაპარაკი შემიძლია", "n": 19}, {"k": 7, "lab": "გაკვეთილი 7", "cn": "今天几号？", "ka": "დღეს რა რიცხვია?", "n": 17}, {"k": 8, "lab": "გაკვეთილი 8", "cn": "我想喝茶", "ka": "ჩაის დალევა მინდა", "n": 19}, {"k": 9, "lab": "გაკვეთილი 9", "cn": "你儿子在哪儿工作？", "ka": "სად მუშაობს შენი შვილი?", "n": 20}, {"k": 10, "lab": "გაკვეთილი 10", "cn": "我能坐这儿吗？", "ka": "შეიძლება აქ დავჯდე?", "n": 22}, {"k": 11, "lab": "გაკვეთილი 11", "cn": "现在几点？", "ka": "ახლა რომელი საათია?", "n": 15}, {"k": 12, "lab": "გაკვეთილი 12", "cn": "明天天气怎么样？", "ka": "ხვალ როგორი ამინდი იქნება?", "n": 14}, {"k": 13, "lab": "გაკვეთილი 13", "cn": "他在学做中国菜呢", "ka": "ის ჩინური კერძების მომზადებას სწავლობს", "n": 23}, {"k": 14, "lab": "გაკვეთილი 14", "cn": "她买了不少衣服", "ka": "მან ბევრი ტანსაცმელი იყიდა", "n": 32}, {"k": 15, "lab": "გაკვეთილი 15", "cn": "我是坐飞机来的", "ka": "თვითმფრინავით ჩამოვედი", "n": 20}], IMG='hsk1', LINKS={"2-13": "https://www.youtube.com/watch?v=0Rb528mMWJM", "3-3": "https://www.youtube.com/watch?v=24uv7bNr54w", "3-4": "https://youtu.be/hWks3EBPWHQ", "3-6": "https://www.youtube.com/watch?v=aNtk8jHTHu4", "3-8": "https://youtu.be/kf7anmSu-ec", "4-4": "https://youtu.be/3g8oWYLBUio", "5-3": "https://www.youtube.com/watch?v=2eLP3FuuEVs", "5-4": "https://vt.tiktok.com/ZSbwy77uF/", "5-7": "https://youtu.be/6r25dMrVj-M", "5-8": "https://youtu.be/O5ldMPut7eQ", "8-3": "https://youtu.be/PIkvN5B1y98", "9-3": "https://youtu.be/Cj9nle3-Zdw", "10-3": "https://youtu.be/bjoOH4-sSUU", "11-3": "https://youtu.be/s5xDqh8wMyU"}, TTIDS={"5-4": "7395660495853784328"};
   const $=id=>document.getElementById(id), mv=$('mv'), sl=$('mvSlide');
   let cur=null, i=0, lastFocus=null, cache={}, showTok=0;
   const src=(k,n)=>IMG+'/l'+String(k).padStart(2,'0')+'/'+String(n).padStart(2,'0')+'.webp';
@@ -1232,6 +1233,12 @@ body.mv-open{overflow:hidden}
     const gw=$('mvGo'); gw.innerHTML='<button type="button" class="mv-go mv-back">↩ სლაიდზე დაბრუნება</button><a class="mv-yt" href="'+lk+'" target="_blank" rel="noopener">თუ ვიდეო არ ჩაირთო, გახსენი YouTube-ზე ↗</a>';
     gw.firstChild.onclick=()=>show();
   }
+  function playTT(id,lk){
+    sl.classList.add('playing','tt-playing'); sl.style.backgroundImage='none';
+    sl.innerHTML='<iframe src="https://www.tiktok.com/player/v1/'+id+'?autoplay=1&rel=0&description=0&music_info=0" title="TikTok ვიდეო" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>';
+    const gw=$('mvGo'); gw.innerHTML='<button type="button" class="mv-go mv-back">↩ სლაიდზე დაბრუნება</button><a class="mv-yt" href="'+lk+'" target="_blank" rel="noopener">თუ ვიდეო არ ჩაირთო, გახსენი TikTok-ზე ↗</a>';
+    gw.firstChild.onclick=()=>show();
+  }
   function show(){
     const d=cur, n=i+1, s0=src(d.k,n), im=pre(d.k,n), tok=++showTok;
     const put=()=>{if(tok===showTok)sl.style.backgroundImage='url("'+s0+'")';};
@@ -1242,13 +1249,15 @@ body.mv-open{overflow:hidden}
     $('mvPrev').disabled=i===0; $('mvNext').disabled=i===d.n-1;
     const last=i===d.n-1; $('mvEnd').hidden=!last;
     const nx=L.find(x=>x.k===d.k+1); $('mvNextLesson').hidden=!nx;
-    sl.innerHTML=''; sl.classList.remove('playing'); const lk=LINKS[d.k+'-'+n]; sl.classList.toggle('has-link',!!lk);
+    sl.innerHTML=''; sl.classList.remove('playing','tt-playing'); const lk=LINKS[d.k+'-'+n]; sl.classList.toggle('has-link',!!lk);
     const yid=lk&&ytId(lk); const gw=$('mvGo'); gw.innerHTML='';
     if(lk&&yid){sl.innerHTML='<button type="button" class="mv-cover" aria-label="ვიდეოს ჩართვა"></button>';
       sl.firstChild.onclick=e=>{e.stopPropagation();play(yid,lk);};
       gw.innerHTML='<button type="button" class="mv-go">▶ ვიდეოს ჩართვა</button>'; gw.firstChild.onclick=()=>play(yid,lk);}
-    else if(lk){sl.innerHTML='<a class="mv-cover" href="'+lk+'" target="_blank" rel="noopener" aria-label="ვიდეოს ნახვა"></a>';
-      gw.innerHTML='<a class="mv-go tt" href="'+lk+'" target="_blank" rel="noopener">▶ ვიდეოს ნახვა TikTok-ზე</a>';}
+    else if(lk){const tid=TTIDS[d.k+'-'+n];
+      sl.innerHTML='<button type="button" class="mv-cover" aria-label="ვიდეოს ჩართვა"></button>';
+      sl.firstChild.onclick=e=>{e.stopPropagation();playTT(tid,lk);};
+      gw.innerHTML='<button type="button" class="mv-go tt">▶ ვიდეოს ჩართვა</button>'; gw.firstChild.onclick=()=>playTT(tid,lk);}
     if(n<d.n)pre(d.k,n+1); if(n>1)pre(d.k,n-1);
     history.replaceState(null,'','#l'+d.k+'-'+n);
   }
